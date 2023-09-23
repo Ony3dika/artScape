@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.name {
+  font-family: "Chillax", sans-serif;
+  font-weight: 900;
+}
+
+.star {
+  font-family: "Stardom", sans-serif;
+}
+
+.pattern {
+  background-image: url(../src/assets/qqquad.svg);
+  background-attachment: fixed;
+}
+
+.mask {
+  mask-image: url(./assets/cir.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 0%;
+  background: red;
+  color: white;
+}
+
+.mask-show{
+  animation: show 1s linear forwards;
+}
+
+@keyframes show {
+  from {
+    mask-size: 0%;
+    opacity: 0;
+  }
+
+  to {
+    mask-size: 250%;
+    display: block;
+    opacity: 1;
+  }
+}
+
+.mask-hide{
+  animation: hide 1s linear forwards;
+}
+
+@keyframes hide{
+  from {
+    mask-size: 250%;
+    opacity: 1;
+  }
+
+  to {
+   mask-size: 0%;
+   opacity: 0;
+   display: hidden;
+  }
+}
+
