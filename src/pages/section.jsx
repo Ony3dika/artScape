@@ -73,12 +73,16 @@ function Section() {
                 alt=''
               />
 
-              <p className='ml-5 absolute star lg:text-5xl text-3xl uppercase left-0 top-0 mt-16'>
+              <p
+                className={`ml-5 absolute star lg:text-5xl text-3xl uppercase left-0 top-0 mt-16 ${
+                  index === 3 ? "text-black" : ""
+                }`}
+              >
                 {art.title}
 
                 <br />
 
-                <span className='star text-base'>{art.artist}</span>
+                <span className={`star text-base ${index === 3 ? "text-black" : ""}`}>{art.artist}</span>
               </p>
             </div>
           </section>
