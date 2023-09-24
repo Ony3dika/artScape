@@ -3,11 +3,12 @@ import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 import { AiOutlineGithub } from "react-icons/ai";
 import { GiGreekSphinx } from "react-icons/gi";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const navLinks = [
     { title: "Home", link: "/" },
-    { title: "Artists", link: "/" },
+    { title: "Art", link: "/art" },
     { title: "Painting", link: "/" },
     { title: "Gallery", link: "/" },
   ];
@@ -57,11 +58,13 @@ function Nav() {
       <nav>
         <section className='flex lg:h-20 h-16'>
           <div className='basis-1/5 flex items-center '>
-            <GiGreekSphinx size={"1.5rem"} />
+            <Link to={"/"}>
+              <GiGreekSphinx size={"1.5rem"} />
+            </Link>
           </div>
 
           <div className='basis-3/5 name flex items-center justify-center text-xl'>
-            <p className='lg:text-lg text-sm'>ArtScape</p>
+            <Link to={"/"} className='lg:text-lg text-sm'>ArtScape</Link>
           </div>
 
           <div className='basis-1/5 flex justify-end items-center'>
@@ -89,7 +92,7 @@ function Nav() {
 
               <div className='lg:basis-4/6 basis-full container mx-auto px-10 pattern bg-red'>
                 <div className='flex justify-between items-center lg:h-20 h-16'>
-                  <p className='lg:text-lg name text-txt text-sm'>ArtScape</p>
+                  <Link to={"/"} className='lg:text-lg name text-txt text-sm'>ArtScape</Link>
 
                   <CgClose
                     onClick={() => setMenu(false)}
@@ -111,7 +114,7 @@ function Nav() {
                         <MobileNavLink
                           key={index}
                           title={link.title}
-                          href={link.href}
+                          link={link.link}
                         />
                       </div>
                     ))}
@@ -152,13 +155,13 @@ const linkVariants = {
   },
 };
 
-const MobileNavLink = ({ title, href }) => {
+const MobileNavLink = ({ title, link }) => {
   return (
     <motion.div
       variants={linkVariants}
       className='text-4xl text-txt star uppercase my-4'
     >
-      <a href={href}>{title}</a>
+      <Link to ={link}>{title}</Link>
     </motion.div>
   );
 };

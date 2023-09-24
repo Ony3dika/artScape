@@ -3,8 +3,6 @@ import img2 from "../assets/pic 2.jpg";
 import img3 from "../assets/pic 3.jpg";
 import img4 from "../assets/pic 4.jpg";
 import { useState } from "react";
-("use client");
-import { motion } from "framer-motion";
 // import useMousePosition from "../utils/mouse";
 function Section() {
   // const {x,y} = useMousePosition();
@@ -45,6 +43,7 @@ function Section() {
         {art.map((art, index) => (
           <section
             onClick={() => handleVisibility(index)}
+            onDoubleClick={() => (window.location.href = "/art")}
             key={index}
             className={`h-96 my-5 cursor-pointer relative lg:border-0 border-[1px] border-[#e5deda] shadow lg:shadow-none lg:my-0 lg:h-full flex flex-col justify-around basis-full lg:basis-1/4 ${
               index === 0 || index === 1 || index === 2
@@ -58,7 +57,7 @@ function Section() {
               </p>
               <p className='star text-base text-black'>{art.artist}</p>
             </div>
-            <p className='text-red font-black text-9xl text-center star'>
+            <p className='text-red font-black text-9xl lg:text-[15rem] text-center star'>
               {art.num}
             </p>
 
@@ -82,7 +81,13 @@ function Section() {
 
                 <br />
 
-                <span className={`star text-base ${index === 3 ? "text-black" : ""}`}>{art.artist}</span>
+                <span
+                  className={`star text-base ${
+                    index === 3 ? "text-black" : ""
+                  }`}
+                >
+                  {art.artist}
+                </span>
               </p>
             </div>
           </section>
