@@ -43,7 +43,7 @@ function Section() {
         {art.map((art, index) => (
           <section
             onClick={() => handleVisibility(index)}
-            onDoubleClick={() => (window.location.href = "/art")}
+            onDoubleClick={() => (window.location.href = "art")}
             key={index}
             className={`h-96 my-5 cursor-pointer relative lg:border-0 border-[1px] border-[#e5deda] shadow lg:shadow-none lg:my-0 lg:h-full flex flex-col justify-around basis-full lg:basis-1/4 ${
               index === 0 || index === 1 || index === 2
