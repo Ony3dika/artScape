@@ -16,21 +16,20 @@ function Section() {
       img: img2,
     },
     {
-      title: "The Great Wave off Kanagawa",
-      artist: "Hokusai",
+      title: "Girl with a Pearl Earring",
+      artist: "Johannes Vermeer",
       num: 3,
       img: img3,
     },
     {
-      title: "Girl with a Pearl Earring",
-      artist: "Johannes Vermeer",
+      title: "The Great Wave off Kanagawa",
+      artist: "Hokusai",
       num: 4,
       img: img4,
     },
   ];
 
   const [visible, setVisible] = useState(Array(art.length).fill(false));
-
   const handleVisibility = (index) => {
     const newStates = Array(visible.length).fill(false);
     newStates[index] = true;
@@ -43,7 +42,7 @@ function Section() {
         {art.map((art, index) => (
           <section
             onClick={() => handleVisibility(index)}
-            onDoubleClick={() => (window.location.href = '/art')}
+            onDoubleClick={() => window.location="/art"}
             key={index}
             className={`h-96 my-5 cursor-pointer relative lg:border-0 border-[1px] border-[#e5deda] shadow lg:shadow-none lg:my-0 lg:h-full flex flex-col justify-around basis-full lg:basis-1/4 ${
               index === 0 || index === 1 || index === 2

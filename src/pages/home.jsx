@@ -1,7 +1,7 @@
 import Nav from "../components/nav";
 import Hero from "./hero";
 import Section from "./section";
-import transition from "../utils/transition"
+import transition from "../utils/transition";
 
 function Home() {
   return (
@@ -15,4 +15,4 @@ function Home() {
   );
 }
 
-export default transition(Home)
+export default transition(Home);
