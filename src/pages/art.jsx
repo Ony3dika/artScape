@@ -4,24 +4,46 @@ import { useAtom } from "jotai";
 import { artwork } from "../utils/store";
 function Art() {
 
-  const [artpiece, setArtpiece] = useAtom(artwork);
+  const [artpiece, ] = useAtom(artwork);
   return (
     <div className=' bg-base'>
       <div className='w-full min-h-screen relative container mx-auto lg:px-20 px-5'>
         <Nav />
-        <main className='flex lg:flex-row flex-col h-[75vh] mt-20'>
-          <div className='flex flex-col justify-between lg:basis-[40%] basis-full p-5'>
-            <p className='star lg:text-5xl text-3xl uppercase text-black'>
-              {artpiece.title}
-            </p>
+        <main className='flex lg:flex-row flex-col h-fit mt-20'>
+          <section className='flex flex-col justify-between lg:basis-[40%] h-96 lg:h-[75vh] basis-full p-5'>
+            <div>
+              <p className='star lg:text-start text-center lg:text-5xl text-3xl uppercase text-black'>
+                {artpiece.title}
+              </p>
 
-            <p className="text-red font-black text-9xl lg:text-[15rem] text-center star">
+              <p className='mt-1 lg:text-start text-center star text-lg'>
+                By {artpiece.artist}
+              </p>
+            </div>
+
+            <p className='text-red font-black text-9xl lg:text-[15rem] text-center star'>
               {artpiece.num}
             </p>
-          </div>
-          <div className='bg-blue-400 lg:basis-[60%] basis-full'>
-            <img src={artpiece.img} className='h-2/3 w-full object-cover object-top' alt='' />
-          </div>
+          </section>
+
+          <section className='lg:basis-[60%] lg:border-x-[1.5px] border-[#e5deda] basis-full mb-5'>
+            <img
+              src={artpiece.img}
+              className={` ${
+                artpiece.num === 1 || artpiece.num === 3
+                  ? "h-96 w-full object-contain"
+                  : "lg:h-96 w-full object-cover"
+              }`}
+              alt={artpiece.title}
+            />
+
+            <div className='lg:flex items-center'>
+              <p className='star lg:mt-0 mt-5 lg:rotate-[270deg] text-center text-xl uppercase text-black'>
+                Description
+              </p>
+              <p className='lg:mt-5 body leading-relaxed'>{artpiece.desc}</p>
+            </div>
+          </section>
         </main>
       </div>
     </div>

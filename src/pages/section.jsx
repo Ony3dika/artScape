@@ -6,19 +6,16 @@ import img4 from "../assets/pic 4.jpg";
 import { useState } from "react";
 import { useAtom } from "jotai";
 import { artwork } from "../utils/store";
-// import useMousePosition from "../utils/mouse";
-function Section() {
-  // const {x,y} = useMousePosition();
-  // const size = 40;
-  const [artpiece, setArtpiece] = useAtom(artwork);
 
+function Section() {
+  const [artpiece, setArtpiece] = useAtom(artwork);
   const art = [
     {
       title: "Mona Lisa",
       artist: "Leonardo da Vinci",
       num: 1,
       img: img1,
-      desc: "The Mona Lisa bears a strong resemblance to many Renaissance depictions of the Virgin Mary, who was at that time seen as an ideal for womanhood.[38] The woman sits markedly upright in a 'pozzetto' armchair with her arms folded, a sign of her reserved posture. Her gaze is fixed on the observer. The woman appears alive to an unusual extent, which Leonardo achieved by his method of not drawing outlines (sfumato). The soft blending creates an ambiguous mood 'mainly' in two features: the corners of the mouth, and the corners of the eyes",
+      desc: "The Mona Lisa bears a strong resemblance to many Renaissance depictions of the Virgin Mary, who was at that time seen as an ideal for womanhood.The woman sits markedly upright in a 'pozzetto' armchair with her arms folded, a sign of her reserved posture. Her gaze is fixed on the observer. The woman appears alive to an unusual extent, which Leonardo achieved by his method of not drawing outlines (sfumato). The soft blending creates an ambiguous mood 'mainly' in two features: the corners of the mouth, and the corners of the eyes.",
     },
     {
       title: "The Starry Night",
@@ -89,8 +86,8 @@ function Section() {
               />
 
               <p
-                className={`ml-5 absolute star lg:text-5xl text-3xl uppercase left-0 top-0 mt-16 ${
-                  index === 3 ? "text-black" : ""
+                className={`ml-5 absolute name lg:text-5xl text-3xl uppercase left-0 top-0 mt-16 ${
+                  index === 3 ? "text-red" : ""
                 }`}
               >
                 {art.title}
@@ -98,8 +95,8 @@ function Section() {
                 <br />
 
                 <span
-                  className={`star text-base ${
-                    index === 3 ? "text-black" : ""
+                  className={`name text-base ${
+                    index === 3 ? "text-red" : ""
                   }`}
                 >
                   {art.artist}

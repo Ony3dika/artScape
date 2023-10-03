@@ -11,6 +11,10 @@
   font-family: "Stardom", sans-serif;
 }
 
+.body{
+  font-family: 'Work Sans', sans-serif;
+}
+
 .pattern {
   background-image: url(../src/assets/qqquad.svg);
   background-attachment: fixed;
