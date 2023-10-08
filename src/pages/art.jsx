@@ -21,7 +21,7 @@ function Art() {
               </p>
             </div>
 
-            <p className='text-red font-black text-9xl lg:text-[15rem] text-center star'>
+            <p className='text-red font-black text-9xl lg:text-[12rem] text-center star'>
               {artpiece.num}
             </p>
           </section>
@@ -30,9 +30,9 @@ function Art() {
             <img
               src={artpiece.img}
               className={` ${
-                artpiece.num === 1 || artpiece.num === 3
+                artpiece.num === 1 || artpiece.num === 3 || artpiece.num === 5 || artpiece.num === 10
                   ? "h-96 w-full object-contain"
-                  : "lg:h-96 w-full object-cover"
+                  : "lg:h-96 w-full object-contain"
               }`}
               alt={artpiece.title}
             />
