@@ -2,8 +2,10 @@ import { useState } from "react";
 import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 import { AiOutlineGithub } from "react-icons/ai";
 import { GiGreekSphinx } from "react-icons/gi";
+import {MdOutlineKeyboardBackspace} from "react-icons/md"
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Nav() {
   const navLinks = [
@@ -53,18 +55,27 @@ function Nav() {
       },
     },
   };
+   const { pathname } = useLocation();
+   const scrollToTopRoutes = ["/art"];
+
   return (
     <div className='top-0 sticky z-50 bg-base'>
       <nav>
         <section className='flex lg:h-20 h-16'>
           <div className='basis-1/5 flex items-center '>
             <Link to={"/"}>
-              <GiGreekSphinx size={"1.5rem"} />
+              {scrollToTopRoutes.includes(pathname) ? (
+                <MdOutlineKeyboardBackspace size={"1.5rem"} />
+              ) : (
+                <GiGreekSphinx size={"1.5rem"} />
+              )}
             </Link>
           </div>
 
           <div className='basis-3/5 name flex items-center justify-center text-xl'>
-            <Link to={"/"} className='lg:text-lg text-sm'>ArtScape</Link>
+            <Link to={"/"} className='lg:text-lg text-sm'>
+              ArtScape
+            </Link>
           </div>
 
           <div className='basis-1/5 flex justify-end items-center'>
@@ -92,7 +103,9 @@ function Nav() {
 
               <div className='lg:basis-4/6 basis-full container mx-auto px-10 pattern bg-red'>
                 <div className='flex justify-between items-center lg:h-20 h-16'>
-                  <Link to={"/"} className='lg:text-lg name text-txt text-sm'>ArtScape</Link>
+                  <Link to={"/"} className='lg:text-lg name text-txt text-sm'>
+                    ArtScape
+                  </Link>
 
                   <CgClose
                     onClick={() => setMenu(false)}

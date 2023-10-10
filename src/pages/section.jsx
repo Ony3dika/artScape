@@ -16,16 +16,15 @@ function Section() {
 
   return (
     <div className='w-full flex items-center bg-base'>
-      <div className='lg:grid lg:grid-cols-4 h-fit w-full mb-5 lg:gap-1 lg:mb-10'>
+      <div className='md:grid md:grid-cols-2 lg:grid-cols-4 h-fit w-full mb-5 lg:gap-1 lg:mb-10'>
         {art.map((art, index) => (
           <div
-            // to={"/art"}
             onClick={() => {
               handleVisibility(index);
               setArtpiece(art);
             }}
             key={index}
-            className='h-96 my-5 cursor-pointer relative border-[0.5px] border-[#e5deda] shadow lg:shadow-none lg:my-0 lg:h-[30rem] flex flex-col justify-around basis-full lg:basis-1/4'
+            className='h-96 my-5 cursor-pointer relative rounded-sm border-[1px] lg:border-[0.5px] border-[#e5deda] lg:my-0 lg:h-[30rem] flex flex-col justify-around basis-full lg:basis-1/4'
           >
             <div className='ml-5'>
               <p className='star lg:text-4xl text-3xl uppercase text-black'>
