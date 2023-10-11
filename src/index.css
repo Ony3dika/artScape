@@ -20,6 +20,13 @@
   background-attachment: fixed;
 }
 
+.chaos{
+  background-image: url(../src/assets/ccchaos.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .mask {
   mask-image: url(./assets/cir.svg);
   mask-repeat: no-repeat;

@@ -12,7 +12,7 @@ import img10 from "../assets/pic 10.jpg";
 import img11 from "../assets/pic 11.jpg";
 import img12 from "../assets/pic 12.jpg";
 
-export const art = [
+export const arts = [
   {
     title: "Mona Lisa",
     artist: "Leonardo da Vinci",
