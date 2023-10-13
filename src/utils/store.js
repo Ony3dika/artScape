@@ -117,3 +117,6 @@ export const artwork = atom({
   img: img1,
   desc: "The Mona Lisa bears a strong resemblance to many Renaissance depictions of the Virgin Mary, who was at that time seen as an ideal for womanhood. The woman sits markedly upright in a 'pozzetto' armchair with her arms folded, a sign of her reserved posture. Her gaze is fixed on the observer. The woman appears alive to an unusual extent, which Leonardo achieved by his method of not drawing outlines (sfumato). The soft blending creates an ambiguous mood 'mainly' in two features: the corners of the mouth, and the corners of the eyes.",
 });
+
+
+export const num = atom(0)

@@ -2,6 +2,7 @@ import Nav from "../components/nav";
 import Hero from "./hero";
 import Section from "./section";
 import transition from "../utils/transition";
+import Footer from "../components/footer";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
         <Nav />
         <Hero />
         <Section />
+        <Footer/>
       </div>
     </main>
   );

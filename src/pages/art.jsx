@@ -1,26 +1,25 @@
 import Nav from "../components/nav";
 import transition from "../utils/transition";
 import { useAtom } from "jotai";
-import { artwork } from "../utils/store";
+import { artwork, num } from "../utils/store";
 
 function Art() {
   const [artpiece, setArtpiece] = useAtom(artwork);
+  const [number, setNumber] = useAtom(num);
 
   const next = () => {
     console.log(number);
-   
   };
 
   const prev = () => {
     console.log(number);
-   
   };
   return (
     <div className=' bg-base'>
       <div className='w-full min-h-screen relative container mx-auto lg:px-20 px-5'>
         <Nav />
         <main className='flex lg:flex-row flex-col h-fit mt-20'>
-          <section className='flex flex-col justify-between lg:basis-[40%] h-96 lg:h-[75vh] basis-full p-5'>
+          <section className='flex flex-col justify-between lg:basis-[35%] h-96 lg:h-[75vh] basis-full p-5'>
             <div>
               <p className='star lg:text-start text-center lg:text-5xl text-3xl uppercase text-black'>
                 {artpiece.title}
@@ -58,10 +57,10 @@ function Art() {
             </div>
           </section>
 
-          {/* <section className='flex lg:flex-col lg:h-[75vh] mb-5 lg:mb-0 lg:basis-[5%] justify-between items-center body font-black'>
+          <section className='flex lg:flex-col lg:h-[75vh] mb-5 lg:mb-0 lg:basis-[5%] justify-between items-center body font-black'>
             <button onClick={prev}>PREV</button>
             <button onClick={next}>NEXT</button>
-          </section> */}
+          </section>
         </main>
       </div>
     </div>
