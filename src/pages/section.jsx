@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { arts } from "../utils/store";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { useAtom } from "jotai";
 import { artwork } from "../utils/store";
@@ -18,7 +19,10 @@ function Section() {
     <div className='w-full flex items-center bg-base'>
       <div className='md:grid md:grid-cols-2 lg:grid-cols-4 h-fit w-full mb-5 lg:gap-1 lg:mb-10'>
         {arts.map((art, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, translateY: -50 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            transition={{ delay: 1.3 + (index * 0.3), duration: 0.3 ,}}
             onClick={() => {
               handleVisibility(index);
               setArtpiece(art);
@@ -76,7 +80,7 @@ function Section() {
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
