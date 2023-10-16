@@ -1,7 +1,8 @@
+import { useEffect, useState } from "react";
 import Nav from "../components/nav";
 import transition from "../utils/transition";
 import { useAtom } from "jotai";
-import { artwork, num } from "../utils/store";
+import { artwork, num, arts } from "../utils/store";
 
 function Art() {
   const [artpiece, setArtpiece] = useAtom(artwork);
@@ -9,10 +10,18 @@ function Art() {
 
   const next = () => {
     console.log(number);
+    if (number < 11 ) {
+      setNumber(number + 1);
+    }
+    setArtpiece(arts[number]);
   };
 
   const prev = () => {
     console.log(number);
+    if (number > 0 && number < 12) {
+      setNumber(number - 1);
+    }
+    setArtpiece(arts[number]);
   };
   return (
     <div className=' bg-base'>

@@ -7,8 +7,8 @@ function Hero() {
   return (
     <main className='h-screen'>
       <div className='flex items-center flex-col pattern relative justify-center lg:h-[82vh] h-screen'>
-        <img src={cir} className='h-44 anim left-0 top-0 absolute' alt='' />
-        <img src={cir} className='h-52 anim right-0 bottom-0 absolute' alt='' />
+        <img src={cir} className='lg:h-44 h-24 anim left-0 top-0 absolute' alt='' />
+        <img src={cir} className='lg:h-52 h-28 anim right-0 bottom-10 lg:bottom-0 absolute' alt='' />
         <motion.div
           id='intro'
           // initial={{ y: 100, opacity: 0 }}
