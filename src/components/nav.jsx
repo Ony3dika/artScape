@@ -2,17 +2,21 @@ import { useState } from "react";
 import { CgMenuRightAlt, CgClose } from "react-icons/cg";
 import { AiOutlineGithub } from "react-icons/ai";
 import { GiGreekSphinx } from "react-icons/gi";
-import {MdOutlineKeyboardBackspace} from "react-icons/md"
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 function Nav() {
   const navLinks = [
-    { title: "Home", link: "/" },
-    { title: "Art", link: "/art" },
-    { title: "Painting", link: "/" },
-    { title: "Gallery", link: "/" },
+    { title: "Home", link: "/", target: "" },
+    { title: "Art", link: "/art", target: "" },
+    {
+      title: "Creator",
+      link: "https://portfolio.ony3dika.vercel.app/",
+      target: "_blank",
+    },
+    // { title: "Gallery", link: "/" },
   ];
   const [menu, setMenu] = useState(false);
 
@@ -55,8 +59,8 @@ function Nav() {
       },
     },
   };
-   const { pathname } = useLocation();
-   const scrollToTopRoutes = ["/art"];
+  const { pathname } = useLocation();
+  const scrollToTopRoutes = ["/art"];
 
   return (
     <div className='top-0 sticky z-50 bg-base'>
@@ -128,6 +132,7 @@ function Nav() {
                           key={index}
                           title={link.title}
                           link={link.link}
+                          target={link.target}
                         />
                       </div>
                     ))}
@@ -135,7 +140,7 @@ function Nav() {
                 </div>
 
                 <div className='h-20 flex justify-center items-center'>
-                  <a href=''>
+                  <a href='https://github.com/Ony3dika'>
                     <AiOutlineGithub className='text-txt' size={"1.5rem"} />
                   </a>
                 </div>
@@ -168,13 +173,13 @@ const linkVariants = {
   },
 };
 
-const MobileNavLink = ({ title, link }) => {
+const MobileNavLink = ({ title, link,target }) => {
   return (
     <motion.div
       variants={linkVariants}
       className='text-4xl text-txt star uppercase my-4'
     >
-      <Link to ={link}>{title}</Link>
+      <Link to={link} target={target}>{title}</Link>
     </motion.div>
   );
 };
